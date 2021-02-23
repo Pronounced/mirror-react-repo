@@ -185,24 +185,33 @@
     ]
   },
   "packageFolders": {
-    "/Users/tannerhesswebber/.nuget/packages/": {}
+    "C:\\Users\\joker\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tannerhesswebber/Documents/code/galvanize/assessments/blogmodo/blogmodo_ent/server/server.csproj",
+      "projectUniqueName": "D:\\GitHub\\enterprise-assessment-fullstack-reactdotnet\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "/Users/tannerhesswebber/Documents/code/galvanize/assessments/blogmodo/blogmodo_ent/server/server.csproj",
-      "packagesPath": "/Users/tannerhesswebber/.nuget/packages/",
-      "outputPath": "/Users/tannerhesswebber/Documents/code/galvanize/assessments/blogmodo/blogmodo_ent/server/obj/",
+      "projectPath": "D:\\GitHub\\enterprise-assessment-fullstack-reactdotnet\\server\\server.csproj",
+      "packagesPath": "C:\\Users\\joker\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\enterprise-assessment-fullstack-reactdotnet\\server\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/tannerhesswebber/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\joker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -244,7 +253,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

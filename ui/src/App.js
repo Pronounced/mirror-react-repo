@@ -33,10 +33,34 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      error: null,
+      isLoaded: false,
       view: "feed",
+      blogs: []
     };
 
     this.changeView = this.changeView.bind(this);
+  }
+
+  componentDidMount() {
+    fetch("https://127.0.0.1:5000/api/blogs")
+    .then(response => response.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          blogs: result.blogs
+        });
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+
+
+      }
+    )
   }
 
   changeView(option) {
@@ -47,35 +71,41 @@ class App extends React.Component {
 
   renderView() {
     const { view } = this.state;
-
     if (view === "feed") {
       return <Feed handleClick={() => this.changeView("anypostview")} />;
     } else {
       return <Post />;
     }
   }
-  render() {
-    return (
-      <div>
-        <div className="nav">
-          <span className="logo" onClick={() => this.changeView("feed")}>
-            BLOGMODO
-          </span>
-          <span
-            className={
-              this.state.view === "feed" ? "nav-selected" : "nav-unselected"
-            }
-            onClick={() => this.changeView("feed")}
-          >
-            See all Posts
-          </span>
-          <span className="nav-unselected">Write a Post</span>
-          <span className="nav-unselected">Admin</span>
-        </div>
 
-        <div className="main">{this.renderView()}</div>
-      </div>
-    );
+  render() {
+    const { error, isLoaded, blogs } = this.state;
+    if(error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>
+    } else {
+      return (
+        <div>
+          <div className="nav">
+            <span className="logo" onClick={() => this.changeView("feed")}>
+              BLOGMODO
+            </span>
+            <span
+              className={
+                this.state.view === "feed" ? "nav-selected" : "nav-unselected"
+              }
+              onClick={() => this.changeView("feed")}
+            >
+              See all Posts
+            </span>
+            <span className="nav-unselected">Write a Post</span>
+            <span className="nav-unselected">Admin</span>
+          </div>
+          <div className="main">{this.renderView()}</div>
+        </div>
+      );
+    }
   }
 }
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import samplePosts from '../sampleData'
-import moment, { relativeTimeRounding } from 'moment'
+import moment from 'moment'
 
 const Feed = (props) => (
   <div className="feed">
+      {//{this.state.blogs.map(p => (<p>{p.title}</p>))}
+      }
     <ul>
       {samplePosts.map(post => (
         <li className="feed-list-item"> 

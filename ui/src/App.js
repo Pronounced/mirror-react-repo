@@ -49,7 +49,7 @@ class App extends React.Component {
       (result) => {
         this.setState({
           isLoaded: true,
-          blogs: result.blogs
+          blogs: result
         });
       },
       (error) => {
@@ -57,8 +57,6 @@ class App extends React.Component {
           isLoaded: true,
           error
         });
-
-
       }
     )
   }
@@ -72,14 +70,14 @@ class App extends React.Component {
   renderView() {
     const { view } = this.state;
     if (view === "feed") {
-      return <Feed handleClick={() => this.changeView("anypostview")} />;
+      return <Feed blog={this.state.blogs} handleClick={() => this.changeView("anypostview")} />;
     } else {
       return <Post />;
     }
   }
 
   render() {
-    const { error, isLoaded, blogs } = this.state;
+    const { error, isLoaded} = this.state;
     if(error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
